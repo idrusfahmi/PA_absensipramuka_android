@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        String session = sharedPreferences.getString("token", "empty");
+        String session = sharedPreferences.getString("username", "empty");
         if(!Objects.equals(session, "empty")){
             sharedPreferences.edit().clear().apply();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));

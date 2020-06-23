@@ -7,7 +7,7 @@ import retrofit2.http.POST;
 
 public interface API {
 
-    String BASEURL = "http://192.168.1.5:8000/api/";
+    String BASEURL = "http://192.168.1.6:8000/api/";
 
     @FormUrlEncoded
     @POST("login")
@@ -16,4 +16,15 @@ public interface API {
             @Field("password") String password
     );
 
+    @FormUrlEncoded
+    @POST("profil_siswa")
+    Call<String> postProfilSiswa(
+            @Field("username") String username
+    );
+
+    @FormUrlEncoded
+    @POST("absensi_siswa")
+    Call<String> postAbsensiSiswa(
+            @Field("username") String username
+    );
 }
